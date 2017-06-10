@@ -45,12 +45,9 @@ public class MainActivity extends SupportActivity {
     }
 
     private void bindLocationListener() {
-        new LocationManager(this, new Observer<Location>() {
-            @Override
-            public void onChanged(@Nullable Location location) {
-                if (location != null) {
-                    locationText.setText(location.getLatitude() + "," + location.getLongitude());
-                }
+        new LocationManager(this, location -> {
+            if (location != null) {
+                locationText.setText(location.getLatitude() + "," + location.getLongitude());
             }
         });
     }
