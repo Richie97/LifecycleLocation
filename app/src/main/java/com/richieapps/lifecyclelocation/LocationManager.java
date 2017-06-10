@@ -17,7 +17,7 @@ import com.google.android.gms.location.LocationResult;
 
 @SuppressWarnings("MissingPermission")
 public class LocationManager implements LifecycleObserver {
-    MutableLiveData<Location> location = new MutableLiveData<>();
+    private MutableLiveData<Location> location = new MutableLiveData<>();
     private FusedLocationProviderClient client;
     private LocationCallback callback;
 
